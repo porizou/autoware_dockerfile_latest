@@ -26,7 +26,7 @@ RUN mkdir src
 RUN curl -s https://raw.githubusercontent.com/autowarefoundation/autoware/main/autoware.repos -o autoware.repos
 RUN vcs import src < autoware.repos
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash" \ && rosdep update && rosdep install -y --from-paths src --ignore-src --rosdistro humble
-RUN /bin/bash -c "source /opt/ros/humble/setup.bash" \ && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+RUN . /opt/ros/humble/setup.sh \ && /bin/bash -c "colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release"
 
 # 環境変数の設定
 RUN echo 'source /root/autoware/install/setup.bash' >> ~/.bashrc && \
