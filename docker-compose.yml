@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  autoware:
+    image: autoware-no-cuda:latest
+    container_name: autoware
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    network_mode: "host"
+    ipc: "host"
+    tty: true
+    stdin_open: true
