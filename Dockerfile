@@ -28,9 +28,14 @@ RUN vcs import src < autoware.repos
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash" \ && rosdep update && rosdep install -y --from-paths src --ignore-src --rosdistro humble
 RUN . /opt/ros/humble/setup.sh \ && /bin/bash -c "colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release"
 
-# 環境変数の設定
 RUN echo 'source /root/autoware/install/setup.bash' >> ~/.bashrc && \
     echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
+
+# Download and unpack a sample map.
+RUN apt-get update && apt-get install -y \
+    unzip
+RUN gdown -O ~/autoware_map/ 'https://docs.google.com/uc?export=download&id=1499_nsbUbIeturZaDj7jhUownh5fvXHd'
+RUN unzip -d ~/autoware_map ~/autoware_map/sample-map-planning.zip
 
 
 # コンテナ実行時のデフォルトのコマンド
