@@ -35,6 +35,12 @@ docker compose up --build
 Attaching to autoware
 ```
 
+Stop and remove container.
+
+```bash
+docker compose down
+```
+
 ## Run Planning simulation
 
 

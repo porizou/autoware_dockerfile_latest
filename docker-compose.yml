@@ -2,6 +2,9 @@ version: '3'
 
 services:
   autoware:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     image: autoware-no-cuda:latest
     container_name: autoware
     environment:
