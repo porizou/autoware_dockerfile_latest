@@ -21,7 +21,7 @@ xhost +local:docker
 docker compose up
 ```
 
-If there is no docke image.
+If there is no docker image.
 
 ```bash
 docker compose up --build
