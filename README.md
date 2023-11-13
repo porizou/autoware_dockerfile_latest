@@ -21,6 +21,13 @@ xhost +local:docker
 docker compose up
 ```
 
+If there is no docke image.
+
+```bash
+docker compose up --build
+```
+
+
 ```bash
 ~/autoware_dockerfile_latest$ docker compose up
 [+] Running 1/1
