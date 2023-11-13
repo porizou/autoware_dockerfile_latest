@@ -1,3 +1,10 @@
+# autoware_dockerfile
+
+This Dockerfile is used to set up an Autoware environment based on Ubuntu 22.04 without GPU.
+
+https://github.com/autowarefoundation/autoware
+
+
 # Usage
 
 
@@ -24,7 +31,7 @@ Attaching to autoware
 ## Run Planning simulation
 
 
-- 
+- Launch Planning simulation
 
 ```bash
 docker exec -it autoware bash
