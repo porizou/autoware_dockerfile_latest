@@ -51,6 +51,7 @@ docker exec -it autoware bash
 ros2 launch autoware_launch planning_simulator.launch.xml map_path:=$HOME/autoware_map/sample-map-planning vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit
 ```
 
+![after-autoware-launch](https://github.com/porizou/autoware_dockerfile_latest/assets/14184141/3b38b420-687b-4724-a5f9-c2db8781c0bb)
 
 
 - Start the ego vehicle
